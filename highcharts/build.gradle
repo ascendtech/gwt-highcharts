@@ -1,0 +1,14 @@
+plugins {
+    id "us.ascendtech.gwt.lib" version "0.2.3"
+}
+
+dependencies {
+    // elemental
+    compile 'com.google.elemental2:elemental2-core:1.0.0-RC1'
+    compile 'com.google.elemental2:elemental2-dom:1.0.0-RC1'
+}
+
+
+
+
+

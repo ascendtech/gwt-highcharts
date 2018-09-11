@@ -47,6 +47,12 @@ Add Dependency
 ```
 
 ### Example in Java
+
+Add dependency to gwt.xml:
+```xml
+<inherits name="us.ascendtech.Highcharts"/>
+```
+
 ```java
 // Column chart
 JsArray<Object> seriesDataArray = new JsArray<>();

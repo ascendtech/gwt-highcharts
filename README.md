@@ -16,8 +16,8 @@ Add AST Maven Repo
 
 Add Dependency:
 ```gradle
-  compile 'com.github.ascendtech:gwt-highcharts:1.1.0'
-  compile 'com.github.ascendtech:gwt-highcharts:1.1.0:sources'
+  compile 'us.ascendtech:gwt-highcharts:1.1.0'
+  compile 'us.ascendtech:gwt-highcharts:1.1.0:sources'
 ```
 
 ### Maven
@@ -34,12 +34,12 @@ Add JitPack
 Add Dependency
 ```xml
   <dependency>
-    <groupId>com.github.ascendtech</groupId>
+    <groupId>us.ascendtech</groupId>
     <artifactId>gwt-highcharts</artifactId>
     <version>1.1.0</version>
   </dependency>
   <dependency>
-    <groupId>com.github.ascendtech</groupId>
+    <groupId>us.ascendtech</groupId>
     <artifactId>gwt-highcharts</artifactId>
     <version>1.1.0</version>
     <classifier>sources</classifier>

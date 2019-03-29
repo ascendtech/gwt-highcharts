@@ -4,7 +4,7 @@ A relatively comprehensive JSInterop wrapping of [Highcharts.js](https://www.hig
 
 ### Gradle
 
-Add JitPack
+Add AST Maven Repo
 ```gradle
   allprojects {
     repositories {

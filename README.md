@@ -9,7 +9,7 @@ Add JitPack
   allprojects {
     repositories {
       ...
-      maven { url 'https://jitpack.io' }
+      maven { url 'https://maven.ascend-tech.us/repo' }
     }
   }
 ```
@@ -26,8 +26,8 @@ Add JitPack
 ```xml
   <repositories>
     <repository>
-      <id>jitpack.io</id>
-      <url>https://jitpack.io</url>
+      <id>AST Maven</id>
+      <url>https://maven.ascend-tech.us/repo</url>
     </repository>
   </repositories>
 ```

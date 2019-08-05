@@ -3,7 +3,7 @@ import org.ajoberstar.reckon.gradle.ReckonExtension
 plugins {
     java
     idea
-    id("us.ascendtech.gwt.lib") version "0.3.6" apply false
+    id("us.ascendtech.gwt.lib") version "0.4.16" apply false
     id("org.ajoberstar.reckon") version "0.8.0"
 }
 
@@ -60,4 +60,8 @@ subprojects {
         duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     }
 
+    java {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
 }

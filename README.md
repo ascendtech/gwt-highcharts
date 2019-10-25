@@ -22,7 +22,7 @@ Add Dependency:
 
 ### Maven
 
-Add JitPack
+Add AST Maven
 ```xml
   <repositories>
     <repository>

@@ -42,12 +42,6 @@ subprojects {
         testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.2.0")
     }
 
-
-    //workaround for intellij 2018.3 (should be fixed in 2018.3.2)
-    idea.module {
-        resourceDirs = resourceDirs - file("src/main/java")
-    }
-
     val sourcesJar = tasks.register<Jar>("sourcesJar") {
         classifier = "sources"
         from(sourceSets.getByName("main").allSource)

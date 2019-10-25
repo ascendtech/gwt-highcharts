@@ -1,6 +1,7 @@
 package us.ascendtech.highcharts.client;
 
 import elemental2.core.JsArray;
+import elemental2.dom.Event;
 import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsType;
 import us.ascendtech.highcharts.client.chartoptions.Subtitle;
@@ -59,9 +60,9 @@ public class Highcharts {
 
 	public native void pauseSonify(boolean fadeOut);
 
-	public native void redraw();
+	public native void redraw(boolean animation);
 
-	public native void reflow();
+	public native void reflow(Event event);
 
 	public native void removeAnnotation(String id);
 

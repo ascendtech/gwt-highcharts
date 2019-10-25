@@ -20,6 +20,26 @@ Add Dependency:
   compile 'us.ascendtech:gwt-highcharts:1.1.0:sources'
 ```
 
+### Gradle Kotlin
+
+Add AST Maven Repo
+```gradle
+  allprojects {
+    repositories {
+        ...
+        maven {
+            url = uri("https://maven.ascend-tech.us/repo")
+        }
+    }
+  }
+```
+
+Add Dependency:
+```gradle
+  compile("us.ascendtech:gwt-highcharts:1.1.0")
+  compile("us.ascendtech:gwt-highcharts:1.1.0:sources")
+```
+
 ### Maven
 
 Add AST Maven

@@ -70,7 +70,7 @@ Add Dependency
 
 Add dependency to gwt.xml:
 ```xml
-<inherits name="us.ascendtech.highcharts.Highcharts/>
+<inherits name="us.ascendtech.highcharts.Highcharts"/>
 ```
 
 ```java

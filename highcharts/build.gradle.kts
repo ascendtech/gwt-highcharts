@@ -3,7 +3,6 @@ plugins {
 }
 
 gwt {
-    isIncludeGwtUser = false
+    includeGwtUser = false
     libs.add("elemento-core")
 }
-

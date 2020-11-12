@@ -16,8 +16,8 @@ Add AST Maven Repo
 
 Add Dependency:
 ```gradle
-  compile 'us.ascendtech:gwt-highcharts:1.1.0'
-  compile 'us.ascendtech:gwt-highcharts:1.1.0:sources'
+  compile 'us.ascendtech:highcharts:1.1.4'
+  compile 'us.ascendtech:highcharts:1.1.4:sources'
 ```
 
 ### Gradle Kotlin
@@ -36,8 +36,8 @@ Add AST Maven Repo
 
 Add Dependency:
 ```gradle
-  compile("us.ascendtech:gwt-highcharts:1.1.0")
-  compile("us.ascendtech:gwt-highcharts:1.1.0:sources")
+  compile("us.ascendtech:highcharts:1.1.4")
+  compile("us.ascendtech:highcharts:1.1.4:sources")
 ```
 
 ### Maven
@@ -55,13 +55,13 @@ Add Dependency
 ```xml
   <dependency>
     <groupId>us.ascendtech</groupId>
-    <artifactId>gwt-highcharts</artifactId>
-    <version>1.1.0</version>
+    <artifactId>highcharts</artifactId>
+    <version>1.1.4</version>
   </dependency>
   <dependency>
     <groupId>us.ascendtech</groupId>
-    <artifactId>gwt-highcharts</artifactId>
-    <version>1.1.0</version>
+    <artifactId>highcharts</artifactId>
+    <version>1.1.4</version>
     <classifier>sources</classifier>
   </dependency>
 ```
@@ -70,7 +70,7 @@ Add Dependency
 
 Add dependency to gwt.xml:
 ```xml
-<inherits name="us.ascendtech.Highcharts"/>
+<inherits name="us.ascendtech.highcharts.Highcharts"/>
 ```
 
 ```java
@@ -128,7 +128,7 @@ FlowPanel chartFlowPanel = new FlowPanel();
 chartFlowPanel.getElement().setId("myChartId");
 chartDiv.addAttachHandler(event -> {
   if (event.isAttached()) {
-    new Highcharts("myChartId", options);
+    Highcharts.chart("myChartId", options);
   }
 });
 

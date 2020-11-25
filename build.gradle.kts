@@ -3,7 +3,7 @@ import org.ajoberstar.reckon.gradle.ReckonExtension
 plugins {
     java
     idea
-    id("us.ascendtech.gwt.lib") version "0.5.4" apply false
+    id("us.ascendtech.gwt.lib") version "0.5.9" apply false
     id("org.ajoberstar.reckon") version "0.8.0"
 }
 

@@ -2,6 +2,7 @@ package us.ascendtech.highcharts.client;
 
 import elemental2.core.JsArray;
 import elemental2.dom.Event;
+import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsType;
 import us.ascendtech.highcharts.client.chartoptions.Subtitle;
@@ -25,6 +26,8 @@ public class Highcharts {
 
 	private Highcharts() {
 	}
+
+	private JsArray<Series> series;
 
 	public native static Highcharts chart(String elementId, ChartOptions chartOptions);
 
@@ -95,4 +98,9 @@ public class Highcharts {
 	public native void update(ChartOptions options, boolean redraw, boolean oneToOne, boolean animation);
 
 	public native void zoomOut();
+
+	@JsOverlay
+	public final JsArray<Series> getSeries() {
+		return series;
+	}
 }

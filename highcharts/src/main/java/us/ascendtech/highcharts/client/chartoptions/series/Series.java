@@ -153,6 +153,8 @@ public class Series {
 	@JsProperty
 	private JsArray<SeriesZones> zones;
 
+	public native void addPoint(JsArray<Object> pointOptions, boolean redraw, boolean shift, boolean animation, boolean withEvent);
+
 	@JsOverlay
 	public final Boolean getAllowPointSelect() {
 		return allowPointSelect;

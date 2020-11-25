@@ -4,6 +4,7 @@ import elemental2.core.JsArray;
 import elemental2.dom.Event;
 import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsPackage;
+import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 import us.ascendtech.highcharts.client.chartoptions.Subtitle;
 import us.ascendtech.highcharts.client.chartoptions.Title;
@@ -27,6 +28,7 @@ public class Highcharts {
 	private Highcharts() {
 	}
 
+	@JsProperty
 	private JsArray<Series> series;
 
 	public native static Highcharts chart(String elementId, ChartOptions chartOptions);

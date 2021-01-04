@@ -12,23 +12,27 @@ public class NavigationButtonOptions {
 	@JsProperty
 	private String align;
 	@JsProperty
-	private double buttonSpacing;
+	private String alignTo;
+	@JsProperty
+	private Double buttonSpacing;
 	@JsProperty
 	private Boolean enabled;
 	@JsProperty
-	private double height;
+	private Double height;
+	@JsProperty
+	private Double padding;
 	@JsProperty
 	private String symbolFill;
 	@JsProperty
-	private double symbolSize;
+	private Double symbolSize;
 	@JsProperty
 	private String symbolStroke;
 	@JsProperty
-	private double symbolStrokeWidth;
+	private Double symbolStrokeWidth;
 	@JsProperty
-	private double symbolX;
+	private Double symbolX;
 	@JsProperty
-	private double symbolY;
+	private Double symbolY;
 	@JsProperty
 	private String text;
 	@JsProperty
@@ -36,9 +40,15 @@ public class NavigationButtonOptions {
 	@JsProperty
 	private String verticalAlign;
 	@JsProperty
-	private double width;
+	private Double width;
 	@JsProperty
-	private double y;
+	private Double x;
+	@JsProperty
+	private Double y;
+	@JsProperty
+	private NavigationButtonOptions zoomIn;
+	@JsProperty
+	private NavigationButtonOptions zoomOut;
 
 	@JsOverlay
 	public final String getAlign() {
@@ -48,6 +58,17 @@ public class NavigationButtonOptions {
 	@JsOverlay
 	public final NavigationButtonOptions setAlign(String align) {
 		this.align = align;
+		return this;
+	}
+
+	@JsOverlay
+	public final String getAlignTo() {
+		return alignTo;
+	}
+
+	@JsOverlay
+	public final NavigationButtonOptions setAlignTo(String alignTo) {
+		this.alignTo = alignTo;
 		return this;
 	}
 
@@ -81,6 +102,17 @@ public class NavigationButtonOptions {
 	@JsOverlay
 	public final NavigationButtonOptions setHeight(double height) {
 		this.height = height;
+		return this;
+	}
+
+	@JsOverlay
+	public final Double getPadding() {
+		return padding;
+	}
+
+	@JsOverlay
+	public final NavigationButtonOptions setPadding(Double padding) {
+		this.padding = padding;
 		return this;
 	}
 
@@ -195,6 +227,17 @@ public class NavigationButtonOptions {
 	}
 
 	@JsOverlay
+	public final Double getX() {
+		return x;
+	}
+
+	@JsOverlay
+	public final NavigationButtonOptions setX(Double x) {
+		this.x = x;
+		return this;
+	}
+
+	@JsOverlay
 	public final double getY() {
 		return y;
 	}
@@ -202,6 +245,28 @@ public class NavigationButtonOptions {
 	@JsOverlay
 	public final NavigationButtonOptions setY(double y) {
 		this.y = y;
+		return this;
+	}
+
+	@JsOverlay
+	public final NavigationButtonOptions getZoomIn() {
+		return zoomIn;
+	}
+
+	@JsOverlay
+	public final NavigationButtonOptions setZoomIn(NavigationButtonOptions zoomIn) {
+		this.zoomIn = zoomIn;
+		return this;
+	}
+
+	@JsOverlay
+	public final NavigationButtonOptions getZoomOut() {
+		return zoomOut;
+	}
+
+	@JsOverlay
+	public final NavigationButtonOptions setZoomOut(NavigationButtonOptions zoomOut) {
+		this.zoomOut = zoomOut;
 		return this;
 	}
 }

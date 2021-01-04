@@ -52,6 +52,14 @@ public class PlotOptions {
 	@JsProperty
 	private Line line;
 	@JsProperty
+	private Map map;
+	@JsProperty
+	private MapBubble mapbubble;
+	@JsProperty
+	private MapLine mapline;
+	@JsProperty
+	private MapPoint mappoint;
+	@JsProperty
 	private Pareto pareto;
 	@JsProperty
 	private Pie pie;
@@ -278,6 +286,50 @@ public class PlotOptions {
 	@JsOverlay
 	public final PlotOptions setLine(Line line) {
 		this.line = line;
+		return this;
+	}
+
+	@JsOverlay
+	public final Map getMap() {
+		return map;
+	}
+
+	@JsOverlay
+	public final PlotOptions setMap(Map map) {
+		this.map = map;
+		return this;
+	}
+
+	@JsOverlay
+	public final MapBubble getMapbubble() {
+		return mapbubble;
+	}
+
+	@JsOverlay
+	public final PlotOptions setMapbubble(MapBubble mapbubble) {
+		this.mapbubble = mapbubble;
+		return this;
+	}
+
+	@JsOverlay
+	public final MapLine getMapline() {
+		return mapline;
+	}
+
+	@JsOverlay
+	public final PlotOptions setMapline(MapLine mapline) {
+		this.mapline = mapline;
+		return this;
+	}
+
+	@JsOverlay
+	public final MapPoint getMappoint() {
+		return mappoint;
+	}
+
+	@JsOverlay
+	public final PlotOptions setMappoint(MapPoint mappoint) {
+		this.mappoint = mappoint;
 		return this;
 	}
 

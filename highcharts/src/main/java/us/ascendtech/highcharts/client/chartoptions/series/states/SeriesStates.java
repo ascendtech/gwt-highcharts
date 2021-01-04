@@ -14,6 +14,8 @@ public class SeriesStates {
 	private SeriesStatesSelect select;
 	@JsProperty
 	private SeriesStatesNormal normal;
+	@JsProperty
+	private SeriesStatesInactive inactive;
 
 	@JsOverlay
 	public final SeriesStatesHover getHover() {
@@ -45,6 +47,17 @@ public class SeriesStates {
 	@JsOverlay
 	public final SeriesStates setNormal(SeriesStatesNormal normal) {
 		this.normal = normal;
+		return this;
+	}
+
+	@JsOverlay
+	public final SeriesStatesInactive getInactive() {
+		return inactive;
+	}
+
+	@JsOverlay
+	public final SeriesStates setInactive(SeriesStatesInactive inactive) {
+		this.inactive = inactive;
 		return this;
 	}
 }

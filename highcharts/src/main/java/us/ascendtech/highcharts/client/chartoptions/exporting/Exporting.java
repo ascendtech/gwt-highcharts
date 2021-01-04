@@ -5,6 +5,7 @@ import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
+import us.ascendtech.highcharts.client.chartoptions.accessibility.Accessibility;
 import us.ascendtech.highcharts.client.chartoptions.chart.Chart;
 
 /**
@@ -14,6 +15,8 @@ import us.ascendtech.highcharts.client.chartoptions.chart.Chart;
 @JsType(isNative = true, name = "Object", namespace = JsPackage.GLOBAL)
 public class Exporting {
 
+	@JsProperty
+	private Accessibility accessibility;
 	@JsProperty
 	private Boolean allowHTML;
 	@JsProperty
@@ -62,6 +65,17 @@ public class Exporting {
 	@JsFunction
 	public interface ExportingError {
 		void onError();
+	}
+
+	@JsOverlay
+	public final Accessibility getAccessibility() {
+		return accessibility;
+	}
+
+	@JsOverlay
+	public final Exporting setAccessibility(Accessibility accessibility) {
+		this.accessibility = accessibility;
+		return this;
 	}
 
 	@JsOverlay
@@ -120,7 +134,7 @@ public class Exporting {
 	}
 
 	@JsOverlay
-	public final Exporting.ExportingError getError() {
+	public final ExportingError getError() {
 		return error;
 	}
 

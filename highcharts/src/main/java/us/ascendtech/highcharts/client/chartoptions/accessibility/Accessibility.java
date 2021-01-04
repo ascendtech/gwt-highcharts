@@ -5,11 +5,9 @@ import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 import us.ascendtech.highcharts.client.chartoptions.shared.KeyboardNavigation;
+import us.ascendtech.highcharts.client.chartoptions.shared.Point;
+import us.ascendtech.highcharts.client.chartoptions.shared.ScreenReaderSection;
 import us.ascendtech.highcharts.client.chartoptions.shared.functions.OnTableAnchorClick;
-import us.ascendtech.highcharts.client.chartoptions.shared.functions.PointDateFormatter;
-import us.ascendtech.highcharts.client.chartoptions.shared.functions.PointDescriptionFormatter;
-import us.ascendtech.highcharts.client.chartoptions.shared.functions.ScreenReaderSectionFormatter;
-import us.ascendtech.highcharts.client.chartoptions.shared.functions.SeriesDescriptionFormatter;
 
 /**
  * @author Payam Meyer
@@ -19,25 +17,66 @@ import us.ascendtech.highcharts.client.chartoptions.shared.functions.SeriesDescr
 public class Accessibility {
 
 	@JsProperty
+	private AnnounceNewData announceNewData;
+	@JsProperty
+	private Accessibility customComponents;
+	@JsProperty
+	private String description;
+	@JsProperty
 	private Boolean describeSingleSeries;
 	@JsProperty
 	private Boolean enabled;
 	@JsProperty
+	private String highContrastTheme;
+	@JsProperty
 	private KeyboardNavigation keyboardNavigation;
+	@JsProperty
+	private String landmarkVerbosity;
+	@JsProperty
+	private String linkedDescription;
 	@JsProperty
 	private OnTableAnchorClick onTableAnchorClick;
 	@JsProperty
-	private String pointDateFormat;
+	private Point point;
 	@JsProperty
-	private PointDateFormatter pointDateFormatter;
+	private ScreenReaderSection screenReaderSection;
 	@JsProperty
-	private PointDescriptionFormatter pointDescriptionFormatter;
+	private AccessibilitySeries series;
 	@JsProperty
-	private Boolean pointDescriptionThreshold;
-	@JsProperty
-	private ScreenReaderSectionFormatter screenReaderSectionFormatter;
-	@JsProperty
-	private SeriesDescriptionFormatter seriesDescriptionFormatter;
+	private String typeDescription;
+
+	@JsOverlay
+	public final AnnounceNewData getAnnounceNewData() {
+		return announceNewData;
+	}
+
+	@JsOverlay
+	public final Accessibility setAnnounceNewData(AnnounceNewData announceNewData) {
+		this.announceNewData = announceNewData;
+		return this;
+	}
+
+	@JsOverlay
+	public final Accessibility getCustomComponents() {
+		return customComponents;
+	}
+
+	@JsOverlay
+	public final Accessibility setCustomComponents(Accessibility customComponents) {
+		this.customComponents = customComponents;
+		return this;
+	}
+
+	@JsOverlay
+	public final String getDescription() {
+		return description;
+	}
+
+	@JsOverlay
+	public final Accessibility setDescription(String description) {
+		this.description = description;
+		return this;
+	}
 
 	@JsOverlay
 	public final Boolean getDescribeSingleSeries() {
@@ -62,6 +101,17 @@ public class Accessibility {
 	}
 
 	@JsOverlay
+	public final String getHighContrastTheme() {
+		return highContrastTheme;
+	}
+
+	@JsOverlay
+	public final Accessibility setHighContrastTheme(String highContrastTheme) {
+		this.highContrastTheme = highContrastTheme;
+		return this;
+	}
+
+	@JsOverlay
 	public final KeyboardNavigation getKeyboardNavigation() {
 		return keyboardNavigation;
 	}
@@ -69,6 +119,28 @@ public class Accessibility {
 	@JsOverlay
 	public final Accessibility setKeyboardNavigation(KeyboardNavigation keyboardNavigation) {
 		this.keyboardNavigation = keyboardNavigation;
+		return this;
+	}
+
+	@JsOverlay
+	public final String getLandmarkVerbosity() {
+		return landmarkVerbosity;
+	}
+
+	@JsOverlay
+	public final Accessibility setLandmarkVerbosity(String landmarkVerbosity) {
+		this.landmarkVerbosity = landmarkVerbosity;
+		return this;
+	}
+
+	@JsOverlay
+	public final String getLinkedDescription() {
+		return linkedDescription;
+	}
+
+	@JsOverlay
+	public final Accessibility setLinkedDescription(String linkedDescription) {
+		this.linkedDescription = linkedDescription;
 		return this;
 	}
 
@@ -84,68 +156,46 @@ public class Accessibility {
 	}
 
 	@JsOverlay
-	public final String getPointDateFormat() {
-		return pointDateFormat;
+	public final Point getPoint() {
+		return point;
 	}
 
 	@JsOverlay
-	public final Accessibility setPointDateFormat(String pointDateFormat) {
-		this.pointDateFormat = pointDateFormat;
+	public final Accessibility setPoint(Point point) {
+		this.point = point;
 		return this;
 	}
 
 	@JsOverlay
-	public final PointDateFormatter getPointDateFormatter() {
-		return pointDateFormatter;
+	public final ScreenReaderSection getScreenReaderSection() {
+		return screenReaderSection;
 	}
 
 	@JsOverlay
-	public final Accessibility setPointDateFormatter(PointDateFormatter pointDateFormatter) {
-		this.pointDateFormatter = pointDateFormatter;
+	public final Accessibility setScreenReaderSection(ScreenReaderSection screenReaderSection) {
+		this.screenReaderSection = screenReaderSection;
 		return this;
 	}
 
 	@JsOverlay
-	public final PointDescriptionFormatter getPointDescriptionFormatter() {
-		return pointDescriptionFormatter;
+	public final AccessibilitySeries getSeries() {
+		return series;
 	}
 
 	@JsOverlay
-	public final Accessibility setPointDescriptionFormatter(PointDescriptionFormatter pointDescriptionFormatter) {
-		this.pointDescriptionFormatter = pointDescriptionFormatter;
+	public final Accessibility setSeries(AccessibilitySeries series) {
+		this.series = series;
 		return this;
 	}
 
 	@JsOverlay
-	public final Boolean getPointDescriptionThreshold() {
-		return pointDescriptionThreshold;
+	public final String getTypeDescription() {
+		return typeDescription;
 	}
 
 	@JsOverlay
-	public final Accessibility setPointDescriptionThreshold(Boolean pointDescriptionThreshold) {
-		this.pointDescriptionThreshold = pointDescriptionThreshold;
-		return this;
-	}
-
-	@JsOverlay
-	public final ScreenReaderSectionFormatter getScreenReaderSectionFormatter() {
-		return screenReaderSectionFormatter;
-	}
-
-	@JsOverlay
-	public final Accessibility setScreenReaderSectionFormatter(ScreenReaderSectionFormatter screenReaderSectionFormatter) {
-		this.screenReaderSectionFormatter = screenReaderSectionFormatter;
-		return this;
-	}
-
-	@JsOverlay
-	public final SeriesDescriptionFormatter getSeriesDescriptionFormatter() {
-		return seriesDescriptionFormatter;
-	}
-
-	@JsOverlay
-	public final Accessibility setSeriesDescriptionFormatter(SeriesDescriptionFormatter seriesDescriptionFormatter) {
-		this.seriesDescriptionFormatter = seriesDescriptionFormatter;
+	public final Accessibility setTypeDescription(String typeDescription) {
+		this.typeDescription = typeDescription;
 		return this;
 	}
 }

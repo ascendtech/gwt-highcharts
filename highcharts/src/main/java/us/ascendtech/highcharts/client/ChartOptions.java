@@ -15,9 +15,11 @@ import us.ascendtech.highcharts.client.chartoptions.axis.XAxis;
 import us.ascendtech.highcharts.client.chartoptions.axis.YAxis;
 import us.ascendtech.highcharts.client.chartoptions.axis.ZAxis;
 import us.ascendtech.highcharts.client.chartoptions.boost.Boost;
+import us.ascendtech.highcharts.client.chartoptions.caption.Caption;
 import us.ascendtech.highcharts.client.chartoptions.chart.Chart;
 import us.ascendtech.highcharts.client.chartoptions.coloraxis.ColorAxis;
 import us.ascendtech.highcharts.client.chartoptions.credits.Credits;
+import us.ascendtech.highcharts.client.chartoptions.defs.Defs;
 import us.ascendtech.highcharts.client.chartoptions.drilldown.Drilldown;
 import us.ascendtech.highcharts.client.chartoptions.exporting.Exporting;
 import us.ascendtech.highcharts.client.chartoptions.labels.Labels;
@@ -45,6 +47,8 @@ public class ChartOptions {
 	@JsProperty
 	private Boost boost;
 	@JsProperty
+	private Caption caption;
+	@JsProperty
 	private Chart chart;
 	@JsProperty
 	private ColorAxis colorAxis;
@@ -55,7 +59,7 @@ public class ChartOptions {
 	@JsProperty
 	private Data data;
 	@JsProperty
-	private String defs; // String json maybe!?
+	private Defs defs;
 	@JsProperty
 	private Drilldown drilldown;
 	@JsProperty
@@ -68,6 +72,8 @@ public class ChartOptions {
 	private Loading loading;
 	@JsProperty
 	private Navigation navigation;
+	@JsProperty
+	private Navigation mapNavigation;
 	@JsProperty
 	private NoData noData;
 	@JsProperty
@@ -127,6 +133,17 @@ public class ChartOptions {
 	}
 
 	@JsOverlay
+	public final Caption getCaption() {
+		return caption;
+	}
+
+	@JsOverlay
+	public final ChartOptions setCaption(Caption caption) {
+		this.caption = caption;
+		return this;
+	}
+
+	@JsOverlay
 	public final Chart getChart() {
 		return chart;
 	}
@@ -182,12 +199,12 @@ public class ChartOptions {
 	}
 
 	@JsOverlay
-	public final String getDefs() {
+	public final Defs getDefs() {
 		return defs;
 	}
 
 	@JsOverlay
-	public final ChartOptions setDefs(String defs) {
+	public final ChartOptions setDefs(Defs defs) {
 		this.defs = defs;
 		return this;
 	}
@@ -244,6 +261,17 @@ public class ChartOptions {
 	@JsOverlay
 	public final ChartOptions setLoading(Loading loading) {
 		this.loading = loading;
+		return this;
+	}
+
+	@JsOverlay
+	public final Navigation getMapNavigation() {
+		return mapNavigation;
+	}
+
+	@JsOverlay
+	public final ChartOptions setMapNavigation(Navigation mapNavigation) {
+		this.mapNavigation = mapNavigation;
 		return this;
 	}
 

@@ -4,6 +4,7 @@ import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
+import us.ascendtech.highcharts.client.chartoptions.accessibility.Accessibility;
 import us.ascendtech.highcharts.client.chartoptions.shared.KeyboardNavigation;
 import us.ascendtech.highcharts.client.chartoptions.shared.Style;
 import us.ascendtech.highcharts.client.chartoptions.shared.functions.LabelFormatter;
@@ -16,6 +17,8 @@ import us.ascendtech.highcharts.client.chartoptions.shared.functions.LabelFormat
 public class Legend {
 
 	@JsProperty
+	private Accessibility accessibility;
+	@JsProperty
 	private String align;
 	@JsProperty
 	private Boolean alignColumns;
@@ -27,6 +30,8 @@ public class Legend {
 	private double borderRadius;
 	@JsProperty
 	private double borderWidth;
+	@JsProperty
+	private BubbleLegend bubbleLegend;
 	@JsProperty
 	private Boolean enabled;
 	@JsProperty
@@ -93,6 +98,17 @@ public class Legend {
 	private double x;
 	@JsProperty
 	private double y;
+
+	@JsOverlay
+	public final Accessibility getAccessibility() {
+		return accessibility;
+	}
+
+	@JsOverlay
+	public final Legend setAccessibility(Accessibility accessibility) {
+		this.accessibility = accessibility;
+		return this;
+	}
 
 	@JsOverlay
 	public final String getAlign() {

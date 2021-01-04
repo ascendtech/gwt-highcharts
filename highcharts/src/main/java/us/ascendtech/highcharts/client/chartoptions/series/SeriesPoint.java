@@ -4,6 +4,7 @@ import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
+import jsinterop.base.JsPropertyMap;
 
 @JsType(isNative = true, name = "Object", namespace = JsPackage.GLOBAL)
 public class SeriesPoint {
@@ -16,6 +17,8 @@ public class SeriesPoint {
 	private String color;
 	@JsProperty
 	private double colorIndex;
+	@JsProperty
+	private String display;
 	@JsProperty
 	private double dist;
 	@JsProperty
@@ -35,7 +38,7 @@ public class SeriesPoint {
 	@JsProperty
 	private Boolean negative;
 	@JsProperty
-	private SeriesPointOptions options;
+	private JsPropertyMap<Object> options;
 	@JsProperty
 	private double plotX;
 	@JsProperty
@@ -95,6 +98,16 @@ public class SeriesPoint {
 	public final SeriesPoint setColorIndex(double colorIndex) {
 		this.colorIndex = colorIndex;
 		return this;
+	}
+
+	@JsOverlay
+	public final String getDisplay() {
+		return display;
+	}
+
+	@JsOverlay
+	public final void setDisplay(String display) {
+		this.display = display;
 	}
 
 	@JsOverlay
@@ -197,12 +210,12 @@ public class SeriesPoint {
 	}
 
 	@JsOverlay
-	public final SeriesPointOptions getOptions() {
+	public final JsPropertyMap<Object> getOptions() {
 		return options;
 	}
 
 	@JsOverlay
-	public final SeriesPoint setOptions(SeriesPointOptions options) {
+	public final SeriesPoint setOptions(JsPropertyMap<Object> options) {
 		this.options = options;
 		return this;
 	}
@@ -294,4 +307,8 @@ public class SeriesPoint {
 		this.zone = zone;
 		return this;
 	}
+
+	public native void zoomTo();
+
+	public native String getClassName();
 }

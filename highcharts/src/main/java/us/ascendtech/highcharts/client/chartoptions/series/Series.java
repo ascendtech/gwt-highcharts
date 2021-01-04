@@ -25,7 +25,7 @@ public class Series {
 	@JsProperty
 	private double boostThreshold;
 	@JsProperty
-	private String borderColor;
+	private Object borderColor;
 	@JsProperty
 	private double borderRadius;
 	@JsProperty
@@ -33,13 +33,15 @@ public class Series {
 	@JsProperty
 	private String className;
 	@JsProperty
-	private String color;
+	private Object color;
 	@JsProperty
 	private Boolean colorByPoint;
 	@JsProperty
 	private double colorIndex;
 	@JsProperty
-	private JsArray<String> colors;
+	private String colorKey;
+	@JsProperty
+	private JsArray<Object> colors;
 	@JsProperty
 	private Boolean crisp;
 	@JsProperty
@@ -85,7 +87,15 @@ public class Series {
 	@JsProperty
 	private double legendIndex;
 	@JsProperty
+	private double lineWidth;
+	@JsProperty
 	private String linkedTo;
+	@JsProperty
+	private SeriesMarker marker;
+	@JsProperty
+	private Object minSize;
+	@JsProperty
+	private Object maxSize;
 	@JsProperty
 	private double maxPointWidth;
 	@JsProperty
@@ -93,7 +103,9 @@ public class Series {
 	@JsProperty
 	private String name;
 	@JsProperty
-	private String negativeColor;
+	private Object negativeColor;
+	@JsProperty
+	private Object nullColor;
 	@JsProperty
 	private SeriesPoint point;
 	@JsProperty
@@ -200,12 +212,12 @@ public class Series {
 	}
 
 	@JsOverlay
-	public final String getBorderColor() {
+	public final Object getBorderColor() {
 		return borderColor;
 	}
 
 	@JsOverlay
-	public final Series setBorderColor(String borderColor) {
+	public final Series setBorderColor(Object borderColor) {
 		this.borderColor = borderColor;
 		return this;
 	}
@@ -244,12 +256,12 @@ public class Series {
 	}
 
 	@JsOverlay
-	public final String getColor() {
+	public final Object getColor() {
 		return color;
 	}
 
 	@JsOverlay
-	public final Series setColor(String color) {
+	public final Series setColor(Object color) {
 		this.color = color;
 		return this;
 	}
@@ -277,12 +289,23 @@ public class Series {
 	}
 
 	@JsOverlay
-	public final JsArray<String> getColors() {
+	public final String getColorKey() {
+		return colorKey;
+	}
+
+	@JsOverlay
+	public final Series setColorKey(String colorKey) {
+		this.colorKey = colorKey;
+		return this;
+	}
+
+	@JsOverlay
+	public final JsArray<Object> getColors() {
 		return colors;
 	}
 
 	@JsOverlay
-	public final Series setColors(JsArray<String> colors) {
+	public final Series setColors(JsArray<Object> colors) {
 		this.colors = colors;
 		return this;
 	}
@@ -530,6 +553,17 @@ public class Series {
 	}
 
 	@JsOverlay
+	public final double getLineWidth() {
+		return lineWidth;
+	}
+
+	@JsOverlay
+	public final Series setLineWidth(double lineWidth) {
+		this.lineWidth = lineWidth;
+		return this;
+	}
+
+	@JsOverlay
 	public final String getLinkedTo() {
 		return linkedTo;
 	}
@@ -537,6 +571,39 @@ public class Series {
 	@JsOverlay
 	public final Series setLinkedTo(String linkedTo) {
 		this.linkedTo = linkedTo;
+		return this;
+	}
+
+	@JsOverlay
+	public final SeriesMarker getMarker() {
+		return marker;
+	}
+
+	@JsOverlay
+	public final Series setMarker(SeriesMarker marker) {
+		this.marker = marker;
+		return this;
+	}
+
+	@JsOverlay
+	public final Object getMinSize() {
+		return minSize;
+	}
+
+	@JsOverlay
+	public final Series setMinSize(Object minSize) {
+		this.minSize = minSize;
+		return this;
+	}
+
+	@JsOverlay
+	public final Object getMaxSize() {
+		return maxSize;
+	}
+
+	@JsOverlay
+	public final Series setMaxSize(Object maxSize) {
+		this.maxSize = maxSize;
 		return this;
 	}
 
@@ -574,13 +641,24 @@ public class Series {
 	}
 
 	@JsOverlay
-	public final String getNegativeColor() {
+	public final Object getNegativeColor() {
 		return negativeColor;
 	}
 
 	@JsOverlay
-	public final Series setNegativeColor(String negativeColor) {
+	public final Series setNegativeColor(Object negativeColor) {
 		this.negativeColor = negativeColor;
+		return this;
+	}
+
+	@JsOverlay
+	public final Object getNullColor() {
+		return nullColor;
+	}
+
+	@JsOverlay
+	public final Series setNullColor(Object nullColor) {
+		this.nullColor = nullColor;
 		return this;
 	}
 

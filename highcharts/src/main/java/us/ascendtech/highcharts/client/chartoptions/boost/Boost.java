@@ -13,7 +13,7 @@ import jsinterop.annotations.JsType;
 public class Boost {
 
 	@JsProperty
-	private Boolean allowForce;
+	private boolean allowForce;
 	@JsProperty
 	private BoostDebug debug;
 	@JsProperty
@@ -21,15 +21,17 @@ public class Boost {
 	@JsProperty
 	private double seriesThreshold;
 	@JsProperty
-	private Boolean useGPUTranslations;
+	private boolean useGPUTranslations;
+	@JsProperty
+	private boolean usePreallocated;
 
 	@JsOverlay
-	public final Boolean getAllowForce() {
+	public final boolean getAllowForce() {
 		return allowForce;
 	}
 
 	@JsOverlay
-	public final Boost setAllowForce(Boolean allowForce) {
+	public final Boost setAllowForce(boolean allowForce) {
 		this.allowForce = allowForce;
 		return this;
 	}
@@ -68,13 +70,24 @@ public class Boost {
 	}
 
 	@JsOverlay
-	public final Boolean getUseGPUTranslations() {
+	public final boolean getUseGPUTranslations() {
 		return useGPUTranslations;
 	}
 
 	@JsOverlay
-	public final Boost setUseGPUTranslations(Boolean useGPUTranslations) {
+	public final Boost setUseGPUTranslations(boolean useGPUTranslations) {
 		this.useGPUTranslations = useGPUTranslations;
+		return this;
+	}
+
+	@JsOverlay
+	public final boolean isUsePreallocated() {
+		return usePreallocated;
+	}
+
+	@JsOverlay
+	public final Boost setUsePreallocated(boolean usePreallocated) {
+		this.usePreallocated = usePreallocated;
 		return this;
 	}
 }

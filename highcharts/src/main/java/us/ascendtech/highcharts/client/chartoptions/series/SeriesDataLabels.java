@@ -5,6 +5,7 @@ import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
+import us.ascendtech.highcharts.client.chartoptions.plotoptions.Animation;
 import us.ascendtech.highcharts.client.chartoptions.shared.Style;
 
 @JsType(isNative = true, name = "Object", namespace = JsPackage.GLOBAL)
@@ -14,6 +15,8 @@ public class SeriesDataLabels {
 	private String align;
 	@JsProperty
 	private Boolean allowOverlap;
+	@JsProperty
+	private Animation animation;
 	@JsProperty
 	private String backgroundColor;
 	@JsProperty
@@ -61,6 +64,8 @@ public class SeriesDataLabels {
 	@JsProperty
 	private double y;
 	@JsProperty
+	private double z;
+	@JsProperty
 	private double zIndex;
 
 	@JsFunction
@@ -87,6 +92,17 @@ public class SeriesDataLabels {
 	@JsOverlay
 	public final SeriesDataLabels setAllowOverlap(Boolean allowOverlap) {
 		this.allowOverlap = allowOverlap;
+		return this;
+	}
+
+	@JsOverlay
+	public final Animation getAnimation() {
+		return animation;
+	}
+
+	@JsOverlay
+	public final SeriesDataLabels setAnimation(Animation animation) {
+		this.animation = animation;
 		return this;
 	}
 
@@ -340,6 +356,17 @@ public class SeriesDataLabels {
 	@JsOverlay
 	public final SeriesDataLabels setY(double y) {
 		this.y = y;
+		return this;
+	}
+
+	@JsOverlay
+	public final double getZ() {
+		return z;
+	}
+
+	@JsOverlay
+	public final SeriesDataLabels setZ(double z) {
+		this.z = z;
 		return this;
 	}
 

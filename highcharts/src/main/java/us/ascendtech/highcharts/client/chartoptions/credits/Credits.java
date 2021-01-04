@@ -19,6 +19,10 @@ public class Credits {
 	@JsProperty
 	private String href;
 	@JsProperty
+	private String mapText;
+	@JsProperty
+	private String mapTextFull;
+	@JsProperty
 	private Position position;
 	@JsProperty
 	private Style style;
@@ -44,6 +48,28 @@ public class Credits {
 	@JsOverlay
 	public final Credits setHref(String href) {
 		this.href = href;
+		return this;
+	}
+
+	@JsOverlay
+	public final String getMapText() {
+		return mapText;
+	}
+
+	@JsOverlay
+	public final Credits setMapText(String mapText) {
+		this.mapText = mapText;
+		return this;
+	}
+
+	@JsOverlay
+	public final String getMapTextFull() {
+		return mapTextFull;
+	}
+
+	@JsOverlay
+	public final Credits setMapTextFull(String mapTextFull) {
+		this.mapTextFull = mapTextFull;
 		return this;
 	}
 

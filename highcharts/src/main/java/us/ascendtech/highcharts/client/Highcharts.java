@@ -1,6 +1,7 @@
 package us.ascendtech.highcharts.client;
 
 import elemental2.core.JsArray;
+import elemental2.dom.Element;
 import elemental2.dom.Event;
 import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsPackage;
@@ -17,6 +18,8 @@ import us.ascendtech.highcharts.client.chartoptions.credits.Credits;
 import us.ascendtech.highcharts.client.chartoptions.exporting.Exporting;
 import us.ascendtech.highcharts.client.chartoptions.series.Series;
 import us.ascendtech.highcharts.client.chartoptions.series.SeriesPoint;
+import us.ascendtech.highcharts.client.chartoptions.shared.Style;
+import us.ascendtech.highcharts.client.chartoptions.shared.functions.GetJSONSuccessCallback;
 
 /**
  * @author Payam Meyer
@@ -31,78 +34,100 @@ public class Highcharts {
 	@JsProperty
 	private JsArray<Series> series;
 
+	@JsProperty
+	private Renderer renderer;
+
 	public native static Highcharts chart(String elementId, ChartOptions chartOptions);
 
-	public native void addAnnotation(Annotations annotations);
+	public native static Highcharts mapChart(String elementId, ChartOptions chartOptions);
 
-	public native void addAxis(Axis axis);
+	public native static Renderer Renderer(Element container, Double width, Double height);
 
-	public native void addColorAxis(ColorAxis colorAxis);
+	public native static void addAnnotation(Annotations annotations);
 
-	public native void addCredits(Credits credits);
+	public native static void addAxis(Axis axis);
+
+	public native static void addColorAxis(ColorAxis colorAxis);
+
+	public native static void addCredits(Credits credits);
 
 	public native void addSeries(Series series);
 
 	public native void addSeriesAsDrillDown(SeriesPoint point);
 
-	public native void cancelSonify(boolean fadeOut);
+	public native static void cancelSonify(boolean fadeOut);
 
-	public native void destroy();
+	public native static void css(Element el, Style style);
 
-	public native void drillUp();
+	public native static void destroy();
 
-	public native void exportChart(Exporting exporting, ChartOptions chartOptions);
+	public native static void drillUp();
 
-	public native void exportChartLocal(Exporting exporting, ChartOptions chartOptions);
+	public native static void exportChart(Exporting exporting, ChartOptions chartOptions);
 
-	// TODO: The getter methods need more thought.
+	public native static void exportChartLocal(Exporting exporting, ChartOptions chartOptions);
 
-	public native void hideLoading();
+	public native static void getJSON(String url, GetJSONSuccessCallback onSuccess);
 
-	public native void init(ChartOptions options);
+	public native static Double getMagnitude(Double num);
 
-	public native boolean isInsideChart(Number plotX, Number plotY, boolean inverted);
+	public native static void hideLoading();
 
-	public native void pauseSonify(boolean fadeOut);
+	public native static void init(ChartOptions options);
 
-	public native void redraw(boolean animation);
+	public native static boolean isInsideChart(Number plotX, Number plotY, boolean inverted);
 
-	public native void reflow(Event event);
+	public native void mapZoom(double howMuch, double centerX, double centerY, double mouseX, double mouseY);
 
-	public native void removeAnnotation(String id);
+	public native static void pauseSonify(boolean fadeOut);
 
-	public native void removeAnnotation(Annotations annotations);
+	public native static void reflow(Event event);
 
-	public native void resetSonifyCursor();
+	public native static void removeAnnotation(String id);
 
-	public native void resetSonifyCursorEnd();
+	public native static void removeAnnotation(Annotations annotations);
 
-	public native void resumeSonify(OnEnd onEnd);
+	public native static void resetSonifyCursor();
 
-	public native void rewindSonify(OnEnd onEnd);
+	public native static void resetSonifyCursorEnd();
 
-	public native void setCaption(Caption caption);
+	public native static void resumeSonify(OnEnd onEnd);
 
-	public native void setClassName(String className);
+	public native static void rewindSonify(OnEnd onEnd);
 
-	public native void setSize(Number width, Number height, boolean animation);
+	public native static void setCaption(Caption caption);
 
-	public native void setSonifyCursor(SeriesPoint point);
+	public native static void setClassName(String className);
 
-	public native void setSonifyCursor(JsArray<SeriesPoint> points);
+	public native static void setSize(Number width, Number height, boolean animation);
 
-	public native void setSubtitle(Subtitle subtitle);
+	public native static void setOptions(Object options);
 
-	public native void setTitle(Title title, Subtitle subtitle, boolean redraw);
+	public native static Object getOptions();
 
-	public native void showLoading(String loadingText);
+	public native static void setSonifyCursor(SeriesPoint point);
 
-	public native void update(ChartOptions options, boolean redraw, boolean oneToOne, boolean animation);
+	public native static void setSonifyCursor(JsArray<SeriesPoint> points);
 
-	public native void zoomOut();
+	public native static void setSubtitle(Subtitle subtitle);
+
+	public native static void setTitle(Title title, Subtitle subtitle, boolean redraw);
+
+	public native static void showLoading(String loadingText);
+
+	public native static void update(ChartOptions options, boolean redraw, boolean oneToOne, boolean animation);
+
+	public native static void zoomOut();
+
+	public native Object get(String id);
 
 	@JsOverlay
 	public final JsArray<Series> getSeries() {
 		return series;
+	}
+
+	@JsOverlay
+	public final Renderer getRenderer() {
+		return renderer;
 	}
 }

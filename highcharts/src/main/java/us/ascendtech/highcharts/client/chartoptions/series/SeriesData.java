@@ -1,5 +1,6 @@
 package us.ascendtech.highcharts.client.chartoptions.series;
 
+import elemental2.core.JsArray;
 import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsProperty;
@@ -38,6 +39,8 @@ public class SeriesData {
 	private String name;
 	@JsProperty
 	private String parent;
+	@JsProperty
+	private JsArray<Object> path;
 	@JsProperty
 	private double pointPadding;
 	@JsProperty
@@ -215,6 +218,17 @@ public class SeriesData {
 	@JsOverlay
 	public final SeriesData setParent(String parent) {
 		this.parent = parent;
+		return this;
+	}
+
+	@JsOverlay
+	public final JsArray<Object> getPath() {
+		return path;
+	}
+
+	@JsOverlay
+	public final SeriesData setPath(JsArray<Object> path) {
+		this.path = path;
 		return this;
 	}
 

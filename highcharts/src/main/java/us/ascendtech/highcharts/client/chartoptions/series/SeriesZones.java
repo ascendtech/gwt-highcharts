@@ -17,6 +17,12 @@ public class SeriesZones {
 	@JsProperty
 	private String fillColor;
 	@JsProperty
+	private double from;
+	@JsProperty
+	private double to;
+	@JsProperty
+	private SeriesMarker marker;
+	@JsProperty
 	private String value;
 
 	@JsOverlay
@@ -60,6 +66,39 @@ public class SeriesZones {
 	@JsOverlay
 	public final SeriesZones setFillColor(String fillColor) {
 		this.fillColor = fillColor;
+		return this;
+	}
+
+	@JsOverlay
+	public final double getFrom() {
+		return from;
+	}
+
+	@JsOverlay
+	public final SeriesZones setFrom(double from) {
+		this.from = from;
+		return this;
+	}
+
+	@JsOverlay
+	public final double getTo() {
+		return to;
+	}
+
+	@JsOverlay
+	public final SeriesZones setTo(double to) {
+		this.to = to;
+		return this;
+	}
+
+	@JsOverlay
+	public final SeriesMarker getMarker() {
+		return marker;
+	}
+
+	@JsOverlay
+	public final SeriesZones setMarker(SeriesMarker marker) {
+		this.marker = marker;
 		return this;
 	}
 

@@ -4,8 +4,10 @@ import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
+import us.ascendtech.highcharts.client.chartoptions.chart.functions.Add;
 import us.ascendtech.highcharts.client.chartoptions.chart.functions.AddSeries;
 import us.ascendtech.highcharts.client.chartoptions.chart.functions.AfterPrint;
+import us.ascendtech.highcharts.client.chartoptions.chart.functions.AfterUpdate;
 import us.ascendtech.highcharts.client.chartoptions.chart.functions.BeforePrint;
 import us.ascendtech.highcharts.client.chartoptions.chart.functions.Click;
 import us.ascendtech.highcharts.client.chartoptions.chart.functions.Drilldown;
@@ -15,15 +17,22 @@ import us.ascendtech.highcharts.client.chartoptions.chart.functions.Load;
 import us.ascendtech.highcharts.client.chartoptions.chart.functions.Redraw;
 import us.ascendtech.highcharts.client.chartoptions.chart.functions.Render;
 import us.ascendtech.highcharts.client.chartoptions.chart.functions.Selection;
+import us.ascendtech.highcharts.client.chartoptions.series.functions.Remove;
 
 @JsType(isNative = true, name = "Object", namespace = JsPackage.GLOBAL)
 public class ChartEvents {
+
+	@JsProperty
+	private Add add;
 
 	@JsProperty
 	private AddSeries addSeries;
 
 	@JsProperty
 	private AfterPrint afterPrint;
+
+	@JsProperty
+	private AfterUpdate afterUpdate;
 
 	@JsProperty
 	private BeforePrint beforePrint;
@@ -45,6 +54,9 @@ public class ChartEvents {
 
 	@JsProperty
 	private Redraw redraw;
+
+	@JsProperty
+	private Remove remove;
 
 	@JsProperty
 	private Render render;

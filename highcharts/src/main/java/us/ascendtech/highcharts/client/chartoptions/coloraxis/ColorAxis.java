@@ -5,6 +5,7 @@ import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
+import us.ascendtech.highcharts.client.chartoptions.accessibility.Accessibility;
 import us.ascendtech.highcharts.client.chartoptions.shared.AxisLabels;
 import us.ascendtech.highcharts.client.chartoptions.shared.functions.TickPositioner;
 
@@ -15,6 +16,8 @@ import us.ascendtech.highcharts.client.chartoptions.shared.functions.TickPositio
 @JsType(isNative = true, name = "Object", namespace = JsPackage.GLOBAL)
 public class ColorAxis {
 
+	@JsProperty
+	private Accessibility accessibility;
 	@JsProperty
 	private Boolean alingTicks;
 	@JsProperty
@@ -45,6 +48,8 @@ public class ColorAxis {
 	private String id;
 	@JsProperty
 	private AxisLabels labels;
+	@JsProperty
+	private String layout;
 	@JsProperty
 	private String lineColor;
 	@JsProperty

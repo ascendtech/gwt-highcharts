@@ -5,6 +5,8 @@ import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
+import us.ascendtech.highcharts.client.chartoptions.shared.functions.NumberFormatter;
+import us.ascendtech.highcharts.client.chartoptions.shared.functions.Proj4;
 
 /**
  * @author Payam Meyer
@@ -32,11 +34,17 @@ public class Chart {
 	@JsProperty
 	private String defaultSeriesType;
 	@JsProperty
+	private boolean displayErrors;
+	@JsProperty
 	private String description;
 	@JsProperty
 	private ChartEvents events;
 	@JsProperty
 	private double height;
+	@JsProperty
+	private Object map;
+	@JsProperty
+	private String mapTransforms;
 	@JsProperty
 	private Boolean ignoreHiddenSeries;
 	@JsProperty
@@ -51,6 +59,8 @@ public class Chart {
 	private double marginRight;
 	@JsProperty
 	private double marginTop;
+	@JsProperty
+	private NumberFormatter numberFormatter;
 	@JsProperty
 	private ChartOptions3d options3d;
 	@JsProperty
@@ -75,6 +85,8 @@ public class Chart {
 	private Boolean plotShadow;
 	@JsProperty
 	private Boolean polar;
+	@JsProperty
+	private Proj4 proj4;
 	@JsProperty
 	private Boolean reflow;
 	@JsProperty
@@ -101,6 +113,8 @@ public class Chart {
 	private double spacingTop;
 	@JsProperty
 	private String style;
+	@JsProperty
+	private boolean styledMode;
 	@JsProperty
 	private String type;
 	@JsProperty
@@ -210,6 +224,17 @@ public class Chart {
 	}
 
 	@JsOverlay
+	public final boolean isDisplayErrors() {
+		return displayErrors;
+	}
+
+	@JsOverlay
+	public final Chart setDisplayErrors(boolean displayErrors) {
+		this.displayErrors = displayErrors;
+		return this;
+	}
+
+	@JsOverlay
 	public final String getDescription() {
 		return description;
 	}
@@ -265,6 +290,28 @@ public class Chart {
 	}
 
 	@JsOverlay
+	public final Object getMap() {
+		return map;
+	}
+
+	@JsOverlay
+	public final Chart setMap(Object map) {
+		this.map = map;
+		return this;
+	}
+
+	@JsOverlay
+	public final String getMapTransforms() {
+		return mapTransforms;
+	}
+
+	@JsOverlay
+	public final Chart setMapTransforms(String mapTransforms) {
+		this.mapTransforms = mapTransforms;
+		return this;
+	}
+
+	@JsOverlay
 	public final JsArray<Double> getMargin() {
 		return margin;
 	}
@@ -316,6 +363,17 @@ public class Chart {
 	@JsOverlay
 	public final Chart setMarginTop(double marginTop) {
 		this.marginTop = marginTop;
+		return this;
+	}
+
+	@JsOverlay
+	public final NumberFormatter getNumberFormatter() {
+		return numberFormatter;
+	}
+
+	@JsOverlay
+	public final Chart setNumberFormatter(NumberFormatter numberFormatter) {
+		this.numberFormatter = numberFormatter;
 		return this;
 	}
 
@@ -448,6 +506,17 @@ public class Chart {
 	@JsOverlay
 	public final Chart setPolar(Boolean polar) {
 		this.polar = polar;
+		return this;
+	}
+
+	@JsOverlay
+	public final Proj4 getProj4() {
+		return proj4;
+	}
+
+	@JsOverlay
+	public final Chart setProj4(Proj4 proj4) {
+		this.proj4 = proj4;
 		return this;
 	}
 
@@ -591,6 +660,17 @@ public class Chart {
 	@JsOverlay
 	public final Chart setStyle(String style) {
 		this.style = style;
+		return this;
+	}
+
+	@JsOverlay
+	public final boolean isStyledMode() {
+		return styledMode;
+	}
+
+	@JsOverlay
+	public final Chart setStyledMode(boolean styledMode) {
+		this.styledMode = styledMode;
 		return this;
 	}
 

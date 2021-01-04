@@ -3,8 +3,7 @@ import org.ajoberstar.reckon.gradle.ReckonExtension
 plugins {
     java
     idea
-    id("us.ascendtech.gwt.lib") version "0.5.9" apply false
-    id("org.ajoberstar.reckon") version "0.8.0"
+    id("org.ajoberstar.reckon") version "0.13.0"
 }
 
 configure<ReckonExtension> {
@@ -38,6 +37,7 @@ subprojects {
     }
 
     dependencies {
+        implementation("com.google.jsinterop:jsinterop-annotations:2.0.0")
         testImplementation("org.junit.jupiter:junit-jupiter-api:5.2.0")
         testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.2.0")
     }

@@ -81,6 +81,8 @@ public class Highcharts {
 
 	public native static void pauseSonify(boolean fadeOut);
 
+	public native void redraw(boolean animation);
+
 	public native static void reflow(Event event);
 
 	public native static void removeAnnotation(String id);

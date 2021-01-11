@@ -5,8 +5,8 @@ import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
+import us.ascendtech.highcharts.client.ChartOptions;
 import us.ascendtech.highcharts.client.chartoptions.accessibility.Accessibility;
-import us.ascendtech.highcharts.client.chartoptions.chart.Chart;
 
 /**
  * @author Payam Meyer
@@ -22,7 +22,7 @@ public class Exporting {
 	@JsProperty
 	private ExportingButtons buttons;
 	@JsProperty
-	private Chart chartOptions;
+	private ChartOptions chartOptions;
 	@JsProperty
 	private ExportingCSV csv;
 	@JsProperty
@@ -101,12 +101,12 @@ public class Exporting {
 	}
 
 	@JsOverlay
-	public final Chart getChartOptions() {
+	public final ChartOptions getChartOptions() {
 		return chartOptions;
 	}
 
 	@JsOverlay
-	public final Exporting setChartOptions(Chart chartOptions) {
+	public final Exporting setChartOptions(ChartOptions chartOptions) {
 		this.chartOptions = chartOptions;
 		return this;
 	}

@@ -1,10 +1,10 @@
 package us.ascendtech.highcharts.client.chartoptions.responsive;
 
-import jsinterop.annotations.JsFunction;
 import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
+import us.ascendtech.highcharts.client.chartoptions.shared.functions.Callback;
 
 @JsType(isNative = true, name = "Object", namespace = JsPackage.GLOBAL)
 public class Condition {
@@ -19,11 +19,6 @@ public class Condition {
 	private double minHeight;
 	@JsProperty
 	private double minWidth;
-
-	@JsFunction
-	public interface Callback {
-		boolean onCallback();
-	}
 
 	@JsOverlay
 	public final Callback getCallback() {

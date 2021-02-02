@@ -6,8 +6,8 @@ import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
-import us.ascendtech.highcharts.client.ChartOptions;
 import us.ascendtech.highcharts.client.chartoptions.series.SeriesPoint;
+import us.ascendtech.highcharts.client.chartoptions.shared.functions.Complete;
 
 /**
  * @author Payam Meyer
@@ -72,11 +72,6 @@ public class Data {
 	@JsFunction
 	public interface BeforeParse {
 		String getModifiedString(String input);
-	}
-
-	@JsFunction
-	public interface Complete {
-		void onComplete(ChartOptions chartOptions);
 	}
 
 	@JsFunction

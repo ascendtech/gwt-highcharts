@@ -35,13 +35,13 @@ public class Highcharts {
 	private JsArray<Series> series;
 
 	@JsProperty
-	private Renderer renderer;
+	private SVGRenderer renderer;
 
 	public native static Highcharts chart(String elementId, ChartOptions chartOptions);
 
 	public native static Highcharts mapChart(String elementId, ChartOptions chartOptions);
 
-	public native static Renderer Renderer(Element container, Double width, Double height);
+	public native static SVGRenderer Renderer(Element container, Double width, Double height);
 
 	public native static void addAnnotation(Annotations annotations);
 
@@ -129,7 +129,7 @@ public class Highcharts {
 	}
 
 	@JsOverlay
-	public final Renderer getRenderer() {
+	public final SVGRenderer getRenderer() {
 		return renderer;
 	}
 }

@@ -41,6 +41,8 @@ public class SVGElement {
 		this.renderer = renderer;
 	}
 
+	public native SVGElement add();
+
 	public native SVGElement add(SVGElement parent);
 
 	public native SVGElement addClass(String className, boolean replace);

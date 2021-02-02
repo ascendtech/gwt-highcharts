@@ -53,6 +53,8 @@ public class SVGElement {
 
 	public native SVGElement attr(String key);
 
+	public native SVGElement attr(JsPropertyMap<Object> key);
+
 	public native SVGElement attr(String hash, String val, Complete complete, boolean continueAnimation);
 
 	public native SVGElement clip(SVGElement clipRect);

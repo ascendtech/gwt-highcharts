@@ -9,27 +9,27 @@ import jsinterop.annotations.JsType;
 public class Background {
 
 	@JsProperty
-	private BackgroundColor backgroundColor;
+	private Object backgroundColor;
 	@JsProperty
 	private String borderColor;
 	@JsProperty
-	private double borderWidth;
+	private Double borderWidth;
 	@JsProperty
 	private String className;
 	@JsProperty
-	private double innerRadius;
+	private Object innerRadius;
 	@JsProperty
-	private double outerRadius;
+	private Object outerRadius;
 	@JsProperty
 	private String shape;
 
 	@JsOverlay
-	public final BackgroundColor getBackgroundColor() {
+	public final Object getBackgroundColor() {
 		return backgroundColor;
 	}
 
 	@JsOverlay
-	public final Background setBackgroundColor(BackgroundColor backgroundColor) {
+	public final Background setBackgroundColor(Object backgroundColor) {
 		this.backgroundColor = backgroundColor;
 		return this;
 	}
@@ -46,12 +46,12 @@ public class Background {
 	}
 
 	@JsOverlay
-	public final double getBorderWidth() {
+	public final Double getBorderWidth() {
 		return borderWidth;
 	}
 
 	@JsOverlay
-	public final Background setBorderWidth(double borderWidth) {
+	public final Background setBorderWidth(Double borderWidth) {
 		this.borderWidth = borderWidth;
 		return this;
 	}
@@ -68,23 +68,23 @@ public class Background {
 	}
 
 	@JsOverlay
-	public final double getInnerRadius() {
+	public final Object getInnerRadius() {
 		return innerRadius;
 	}
 
 	@JsOverlay
-	public final Background setInnerRadius(double innerRadius) {
+	public final Background setInnerRadius(Object innerRadius) {
 		this.innerRadius = innerRadius;
 		return this;
 	}
 
 	@JsOverlay
-	public final double getOuterRadius() {
+	public final Object getOuterRadius() {
 		return outerRadius;
 	}
 
 	@JsOverlay
-	public final Background setOuterRadius(double outerRadius) {
+	public final Background setOuterRadius(Object outerRadius) {
 		this.outerRadius = outerRadius;
 		return this;
 	}

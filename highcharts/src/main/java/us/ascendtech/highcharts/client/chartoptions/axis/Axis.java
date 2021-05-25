@@ -155,6 +155,8 @@ public class Axis {
 	private JsArray<JsArray<Double>> units;
 	@JsProperty
 	private Boolean visible;
+	@JsProperty
+	private JsArray<JsArray<Object>> stops;
 
 	@JsOverlay
 	public final Boolean getAlignTicks() {
@@ -934,6 +936,17 @@ public class Axis {
 	@JsOverlay
 	public final Axis setVisible(Boolean visible) {
 		this.visible = visible;
+		return this;
+	}
+
+	@JsOverlay
+	public final JsArray<JsArray<Object>> getStops() {
+		return stops;
+	}
+
+	@JsOverlay
+	public final Axis setStops(JsArray<JsArray<Object>> stops) {
+		this.stops = stops;
 		return this;
 	}
 }

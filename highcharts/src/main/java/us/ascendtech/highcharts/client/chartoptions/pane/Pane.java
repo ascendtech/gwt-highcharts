@@ -5,7 +5,6 @@ import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
-import us.ascendtech.highcharts.client.chartoptions.shared.Background;
 
 /**
  * @author Payam Meyer
@@ -15,7 +14,7 @@ import us.ascendtech.highcharts.client.chartoptions.shared.Background;
 public class Pane {
 
 	@JsProperty
-	private JsArray<Background> background;
+	private Object background;
 	@JsProperty
 	private JsArray<Object> center;
 	@JsProperty
@@ -26,12 +25,12 @@ public class Pane {
 	private double startAngle;
 
 	@JsOverlay
-	public final JsArray<Background> getBackground() {
+	public final Object getBackground() {
 		return background;
 	}
 
 	@JsOverlay
-	public final Pane setBackground(JsArray<Background> background) {
+	public final Pane setBackground(Object background) {
 		this.background = background;
 		return this;
 	}

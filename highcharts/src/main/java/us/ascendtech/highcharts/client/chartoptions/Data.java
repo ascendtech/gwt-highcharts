@@ -29,7 +29,7 @@ public class Data {
 	@JsProperty
 	private String csvUrl;
 	@JsProperty
-	private Integer dataRefreshRate;
+	private Double dataRefreshRate;
 	@JsProperty
 	private String dateFormat;
 	@JsProperty
@@ -61,9 +61,9 @@ public class Data {
 	@JsProperty
 	private JsArray<SeriesPoint> seriesMapping;
 	@JsProperty
-	private Integer startColumn;
+	private Double startColumn;
 	@JsProperty
-	private Integer startRow;
+	private Double startRow;
 	@JsProperty
 	private Boolean switchRowsAndColumns;
 	@JsProperty
@@ -81,7 +81,7 @@ public class Data {
 
 	@JsFunction
 	public interface ParseDate {
-		Integer getParsedDate(String date);
+		Double getParsedDate(String date);
 	}
 
 	@JsOverlay
@@ -151,12 +151,12 @@ public class Data {
 	}
 
 	@JsOverlay
-	public final Integer getDataRefreshRate() {
+	public final Double getDataRefreshRate() {
 		return dataRefreshRate;
 	}
 
 	@JsOverlay
-	public final Data setDataRefreshRate(Integer dataRefreshRate) {
+	public final Data setDataRefreshRate(Double dataRefreshRate) {
 		this.dataRefreshRate = dataRefreshRate;
 		return this;
 	}
@@ -327,23 +327,23 @@ public class Data {
 	}
 
 	@JsOverlay
-	public final Integer getStartColumn() {
+	public final Double getStartColumn() {
 		return startColumn;
 	}
 
 	@JsOverlay
-	public final Data setStartColumn(Integer startColumn) {
+	public final Data setStartColumn(Double startColumn) {
 		this.startColumn = startColumn;
 		return this;
 	}
 
 	@JsOverlay
-	public final Integer getStartRow() {
+	public final Double getStartRow() {
 		return startRow;
 	}
 
 	@JsOverlay
-	public final Data setStartRow(Integer startRow) {
+	public final Data setStartRow(Double startRow) {
 		this.startRow = startRow;
 		return this;
 	}

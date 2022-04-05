@@ -19,9 +19,9 @@ public class AnnotationsLabelOptions {
 	@JsProperty
 	private String borderColor;
 	@JsProperty
-	private Integer borderRadius;
+	private Double borderRadius;
 	@JsProperty
-	private Integer borderWidth;
+	private Double borderWidth;
 	@JsProperty
 	private String className;
 	@JsProperty
@@ -100,23 +100,23 @@ public class AnnotationsLabelOptions {
 	}
 
 	@JsOverlay
-	public final Integer getBorderRadius() {
+	public final Double getBorderRadius() {
 		return borderRadius;
 	}
 
 	@JsOverlay
-	public final AnnotationsLabelOptions setBorderRadius(Integer borderRadius) {
+	public final AnnotationsLabelOptions setBorderRadius(Double borderRadius) {
 		this.borderRadius = borderRadius;
 		return this;
 	}
 
 	@JsOverlay
-	public final Integer getBorderWidth() {
+	public final Double getBorderWidth() {
 		return borderWidth;
 	}
 
 	@JsOverlay
-	public final AnnotationsLabelOptions setBorderWidth(Integer borderWidth) {
+	public final AnnotationsLabelOptions setBorderWidth(Double borderWidth) {
 		this.borderWidth = borderWidth;
 		return this;
 	}

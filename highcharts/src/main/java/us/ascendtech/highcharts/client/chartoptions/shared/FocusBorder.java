@@ -13,7 +13,7 @@ public class FocusBorder {
 	@JsProperty
 	private Boolean hideBrowserFocusOutline;
 	@JsProperty
-	private Integer margin;
+	private Double margin;
 	@JsProperty
 	private Style style;
 
@@ -40,12 +40,12 @@ public class FocusBorder {
 	}
 
 	@JsOverlay
-	public final Integer getMargin() {
+	public final Double getMargin() {
 		return margin;
 	}
 
 	@JsOverlay
-	public final FocusBorder setMargin(Integer margin) {
+	public final FocusBorder setMargin(Double margin) {
 		this.margin = margin;
 		return this;
 	}

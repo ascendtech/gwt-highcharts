@@ -17,7 +17,7 @@ defaultTasks("build")
 subprojects {
 
     apply(plugin = "java")
-    apply(plugin = "maven")
+    apply(plugin = "maven-publish")
     apply(plugin = "idea")
 
 

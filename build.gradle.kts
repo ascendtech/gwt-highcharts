@@ -3,6 +3,7 @@ import org.ajoberstar.reckon.gradle.ReckonExtension
 plugins {
     java
     idea
+    `maven-publish`
     id("org.ajoberstar.reckon") version "0.13.0"
 }
 
@@ -43,7 +44,8 @@ subprojects {
     }
 
     val sourcesJar = tasks.register<Jar>("sourcesJar") {
-        classifier = "sources"
+        dependsOn(JavaPlugin.CLASSES_TASK_NAME)
+        archiveClassifier.set("sources")
         from(sourceSets.getByName("main").allSource)
     }
 

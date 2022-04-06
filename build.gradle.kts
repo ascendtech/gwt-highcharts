@@ -12,8 +12,7 @@ configure<ReckonExtension> {
     stageFromProp("rc", "final")
 }
 
-
-defaultTasks("build")
+defaultTasks("build", "install")
 
 subprojects {
 
@@ -28,7 +27,6 @@ subprojects {
     repositories {
         mavenCentral()
     }
-
 
     tasks.withType<JavaCompile> {
         options.isDebug = true
@@ -48,7 +46,6 @@ subprojects {
         archiveClassifier.set("sources")
         from(sourceSets.getByName("main").allSource)
     }
-
 
     artifacts.add("archives", sourcesJar)
 

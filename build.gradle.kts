@@ -13,7 +13,7 @@ configure<ReckonExtension> {
     stageFromProp("rc", "final")
 }
 
-defaultTasks("build", "install")
+defaultTasks("build")
 
 subprojects {
 
@@ -28,9 +28,15 @@ subprojects {
     }
 
     val sourcesJar = tasks.register<Jar>("sourcesJar") {
-        dependsOn(JavaPlugin.CLASSES_TASK_NAME)
         archiveClassifier.set("sources")
-        from(sourceSets.main.get().allJava)
+        from(sourceSets.getByName("main").allSource)
+    }
+
+    tasks.withType<JavaCompile> {
+        options.isDebug = true
+        options.debugOptions.debugLevel = "source,lines,vars"
+        options.encoding = "UTF-8"
+        options.compilerArgs.add("-parameters")
     }
 
     artifacts.add("archives", sourcesJar)

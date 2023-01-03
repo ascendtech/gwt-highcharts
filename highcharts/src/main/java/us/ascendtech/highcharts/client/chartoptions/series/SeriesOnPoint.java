@@ -15,6 +15,7 @@ public class SeriesOnPoint {
 	@JsProperty
 	private Position position;
 
+	@JsOverlay
 	public SeriesConnectorOptions getConnectorOptions() {
 		return connectorOptions;
 	}

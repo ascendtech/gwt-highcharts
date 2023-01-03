@@ -56,12 +56,12 @@ Add Dependency
   <dependency>
     <groupId>us.ascendtech</groupId>
     <artifactId>highcharts</artifactId>
-    <version>1.2.0</version>
+    <version>1.2.1</version>
   </dependency>
   <dependency>
     <groupId>us.ascendtech</groupId>
     <artifactId>highcharts</artifactId>
-    <version>1.2.0</version>
+    <version>1.2.1</version>
     <classifier>sources</classifier>
   </dependency>
 ```

@@ -5,6 +5,7 @@ import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
+import us.ascendtech.highcharts.client.chartoptions.accessibility.Accessibility;
 import us.ascendtech.highcharts.client.chartoptions.series.states.SeriesStates;
 import us.ascendtech.highcharts.client.chartoptions.shared.functions.Animation;
 import us.ascendtech.highcharts.client.chartoptions.shared.functions.PointDescriptionFormatter;
@@ -16,6 +17,8 @@ import us.ascendtech.highcharts.client.chartoptions.shared.functions.PointDescri
 @JsType(isNative = true, name = "Object", namespace = JsPackage.GLOBAL)
 public class Series {
 
+	@JsProperty
+	private Accessibility accessibility;
 	@JsProperty
 	private Boolean allowPointSelect;
 	@JsProperty
@@ -30,10 +33,20 @@ public class Series {
 	private double borderRadius;
 	@JsProperty
 	private double borderWidth;
+
+	@JsProperty
+	private Boolean centerInCategory;
 	@JsProperty
 	private String className;
+
+	@JsProperty
+	private Boolean clip;
 	@JsProperty
 	private Object color;
+
+	@JsProperty
+	private double colorAxis;
+
 	@JsProperty
 	private Boolean colorByPoint;
 	@JsProperty
@@ -43,13 +56,25 @@ public class Series {
 	@JsProperty
 	private JsArray<Object> colors;
 	@JsProperty
+	private Boolean connectEnds;
+	@JsProperty
+	private Boolean connectNulls;
+	@JsProperty
 	private Boolean crisp;
 	@JsProperty
 	private double cropThreshold;
 	@JsProperty
 	private String cursor;
 	@JsProperty
+	private double curveFactor;
+	@JsProperty
+	private Object custom;
+	@JsProperty
+	private String dashStyle;
+	@JsProperty
 	private JsArray<Object> data;
+	@JsProperty
+	private Boolean dataAsColumns;
 	@JsProperty
 	private SeriesDataLabels dataLabels;
 	@JsProperty
@@ -79,6 +104,8 @@ public class Series {
 	@JsProperty
 	private String id;
 	@JsProperty
+	private Boolean includeInDataExport;
+	@JsProperty
 	private double index;
 	@JsProperty
 	private JsArray<String> keys;
@@ -91,7 +118,11 @@ public class Series {
 	@JsProperty
 	private String linkedTo;
 	@JsProperty
+	private double linkOpacity;
+	@JsProperty
 	private SeriesMarker marker;
+	@JsProperty
+	private double minLinkWidth;
 	@JsProperty
 	private Object minSize;
 	@JsProperty
@@ -105,7 +136,17 @@ public class Series {
 	@JsProperty
 	private Object negativeColor;
 	@JsProperty
+	private double nodePadding;
+	@JsProperty
+	private JsArray<SeriesNode> nodes;
+	@JsProperty
+	private double nodeWidth;
+	@JsProperty
 	private Object nullColor;
+	@JsProperty
+	private SeriesOnPoint onPoint;
+	@JsProperty
+	private double opacity;
 	@JsProperty
 	private SeriesPoint point;
 	@JsProperty
@@ -125,6 +166,8 @@ public class Series {
 	@JsProperty
 	private double pointWidth;
 	@JsProperty
+	private Boolean relativeXValue;
+	@JsProperty
 	private Boolean selected;
 	@JsProperty
 	private Boolean shadow;
@@ -142,6 +185,8 @@ public class Series {
 	private String stacking;
 	@JsProperty
 	private SeriesStates states;
+	@JsProperty
+	private String step;
 	@JsProperty
 	private Boolean stickyTracking;
 	@JsProperty
@@ -166,6 +211,17 @@ public class Series {
 	private JsArray<SeriesZones> zones;
 
 	public native void addPoint(JsArray<Object> pointOptions, boolean redraw, boolean shift, boolean animation, boolean withEvent);
+
+	@JsOverlay
+	public final Accessibility getAccessibility() {
+		return accessibility;
+	}
+
+	@JsOverlay
+	public final Series setAccessibility(Accessibility accessibility) {
+		this.accessibility = accessibility;
+		return this;
+	}
 
 	@JsOverlay
 	public final Boolean getAllowPointSelect() {
@@ -245,6 +301,17 @@ public class Series {
 	}
 
 	@JsOverlay
+	public final Boolean getCenterInCategory() {
+		return centerInCategory;
+	}
+
+	@JsOverlay
+	public final Series setCenterInCategory(Boolean centerInCategory) {
+		this.centerInCategory = centerInCategory;
+		return this;
+	}
+
+	@JsOverlay
 	public final String getClassName() {
 		return className;
 	}
@@ -256,6 +323,17 @@ public class Series {
 	}
 
 	@JsOverlay
+	public final Boolean getClip() {
+		return clip;
+	}
+
+	@JsOverlay
+	public final Series setClip(Boolean clip) {
+		this.clip = clip;
+		return this;
+	}
+
+	@JsOverlay
 	public final Object getColor() {
 		return color;
 	}
@@ -263,6 +341,17 @@ public class Series {
 	@JsOverlay
 	public final Series setColor(Object color) {
 		this.color = color;
+		return this;
+	}
+
+	@JsOverlay
+	public final double getColorAxis() {
+		return colorAxis;
+	}
+
+	@JsOverlay
+	public final Series setColorAxis(double colorAxis) {
+		this.colorAxis = colorAxis;
 		return this;
 	}
 
@@ -311,6 +400,28 @@ public class Series {
 	}
 
 	@JsOverlay
+	public final Boolean getConnectEnds() {
+		return connectEnds;
+	}
+
+	@JsOverlay
+	public final Series setConnectEnds(Boolean connectEnds) {
+		this.connectEnds = connectEnds;
+		return this;
+	}
+
+	@JsOverlay
+	public final Boolean getConnectNulls() {
+		return connectNulls;
+	}
+
+	@JsOverlay
+	public final Series setConnectNulls(Boolean connectNulls) {
+		this.connectNulls = connectNulls;
+		return this;
+	}
+
+	@JsOverlay
 	public final Boolean getCrisp() {
 		return crisp;
 	}
@@ -344,6 +455,39 @@ public class Series {
 	}
 
 	@JsOverlay
+	public final double getCurveFactor() {
+		return curveFactor;
+	}
+
+	@JsOverlay
+	public final Series setCurveFactor(double curveFactor) {
+		this.curveFactor = curveFactor;
+		return this;
+	}
+
+	@JsOverlay
+	public final Object getCustom() {
+		return custom;
+	}
+
+	@JsOverlay
+	public final Series setCustom(Object custom) {
+		this.custom = custom;
+		return this;
+	}
+
+	@JsOverlay
+	public final String getDashStyle() {
+		return dashStyle;
+	}
+
+	@JsOverlay
+	public final Series setDashStyle(String dashStyle) {
+		this.dashStyle = dashStyle;
+		return this;
+	}
+
+	@JsOverlay
 	public final JsArray<Object> getData() {
 		return data;
 	}
@@ -351,6 +495,17 @@ public class Series {
 	@JsOverlay
 	public final Series setData(JsArray<Object> data) {
 		this.data = data;
+		return this;
+	}
+
+	@JsOverlay
+	public final Boolean getDataAsColumns() {
+		return dataAsColumns;
+	}
+
+	@JsOverlay
+	public final Series setDataAsColumns(Boolean dataAsColumns) {
+		this.dataAsColumns = dataAsColumns;
 		return this;
 	}
 
@@ -509,6 +664,17 @@ public class Series {
 	}
 
 	@JsOverlay
+	public final Boolean getIncludeInDataExport() {
+		return includeInDataExport;
+	}
+
+	@JsOverlay
+	public final Series setIncludeInDataExport(Boolean includeInDataExport) {
+		this.includeInDataExport = includeInDataExport;
+		return this;
+	}
+
+	@JsOverlay
 	public final double getIndex() {
 		return index;
 	}
@@ -575,6 +741,17 @@ public class Series {
 	}
 
 	@JsOverlay
+	public final double getLinkOpacity() {
+		return linkOpacity;
+	}
+
+	@JsOverlay
+	public final Series setLinkOpacity(double linkOpacity) {
+		this.linkOpacity = linkOpacity;
+		return this;
+	}
+
+	@JsOverlay
 	public final SeriesMarker getMarker() {
 		return marker;
 	}
@@ -582,6 +759,17 @@ public class Series {
 	@JsOverlay
 	public final Series setMarker(SeriesMarker marker) {
 		this.marker = marker;
+		return this;
+	}
+
+	@JsOverlay
+	public final double getMinLinkWidth() {
+		return minLinkWidth;
+	}
+
+	@JsOverlay
+	public final Series setMinLinkWidth(double minLinkWidth) {
+		this.minLinkWidth = minLinkWidth;
 		return this;
 	}
 
@@ -652,6 +840,39 @@ public class Series {
 	}
 
 	@JsOverlay
+	public final double getNodePadding() {
+		return nodePadding;
+	}
+
+	@JsOverlay
+	public final Series setNodePadding(double nodePadding) {
+		this.nodePadding = nodePadding;
+		return this;
+	}
+
+	@JsOverlay
+	public final JsArray<SeriesNode> getNodes() {
+		return nodes;
+	}
+
+	@JsOverlay
+	public final Series setNodes(JsArray<SeriesNode> nodes) {
+		this.nodes = nodes;
+		return this;
+	}
+
+	@JsOverlay
+	public final double getNodeWidth() {
+		return nodeWidth;
+	}
+
+	@JsOverlay
+	public final Series setNodeWidth(double nodeWidth) {
+		this.nodeWidth = nodeWidth;
+		return this;
+	}
+
+	@JsOverlay
 	public final Object getNullColor() {
 		return nullColor;
 	}
@@ -659,6 +880,28 @@ public class Series {
 	@JsOverlay
 	public final Series setNullColor(Object nullColor) {
 		this.nullColor = nullColor;
+		return this;
+	}
+
+	@JsOverlay
+	public final SeriesOnPoint getOnPoint() {
+		return onPoint;
+	}
+
+	@JsOverlay
+	public final Series setOnPoint(SeriesOnPoint onPoint) {
+		this.onPoint = onPoint;
+		return this;
+	}
+
+	@JsOverlay
+	public final double getOpacity() {
+		return opacity;
+	}
+
+	@JsOverlay
+	public final Series setOpacity(double opacity) {
+		this.opacity = opacity;
 		return this;
 	}
 
@@ -762,6 +1005,17 @@ public class Series {
 	}
 
 	@JsOverlay
+	public final Boolean getRelativeXValue() {
+		return relativeXValue;
+	}
+
+	@JsOverlay
+	public final Series setRelativeXValue(Boolean relativeXValue) {
+		this.relativeXValue = relativeXValue;
+		return this;
+	}
+
+	@JsOverlay
 	public final Boolean getSelected() {
 		return selected;
 	}
@@ -857,6 +1111,17 @@ public class Series {
 	@JsOverlay
 	public final Series setStates(SeriesStates states) {
 		this.states = states;
+		return this;
+	}
+
+	@JsOverlay
+	public final String getStep() {
+		return step;
+	}
+
+	@JsOverlay
+	public final Series setStep(String step) {
+		this.step = step;
 		return this;
 	}
 

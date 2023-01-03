@@ -16,6 +16,10 @@ public class Position {
 	private double x;
 	@JsProperty
 	private double y;
+	@JsProperty
+	private double offsetX;
+	@JsProperty
+	private double offsetY;
 
 	@JsOverlay
 	public final String getAlign() {
@@ -58,6 +62,28 @@ public class Position {
 	@JsOverlay
 	public final Position setY(double y) {
 		this.y = y;
+		return this;
+	}
+
+	@JsOverlay
+	public final double getOffsetX() {
+		return offsetX;
+	}
+
+	@JsOverlay
+	public final Position setOffsetX(double offsetX) {
+		this.offsetX = offsetX;
+		return this;
+	}
+
+	@JsOverlay
+	public final double getOffsetY() {
+		return offsetY;
+	}
+
+	@JsOverlay
+	public final Position setOffsetY(double offsetY) {
+		this.offsetY = offsetY;
 		return this;
 	}
 }

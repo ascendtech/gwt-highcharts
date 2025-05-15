@@ -117,9 +117,6 @@ subprojects {
         }
     }
 
-    defaultTasks("build")
-    group = "us.ascendtech"
-
     repositories {
         mavenCentral()
     }

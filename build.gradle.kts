@@ -1,17 +1,24 @@
-import org.ajoberstar.reckon.gradle.ReckonExtension
-
 plugins {
     java
     idea
+    id("us.ascendtech.gwt.lib") version "0.11.1" apply false
     signing
     `maven-publish`
-    id("org.ajoberstar.reckon") version "0.13.0"
+    alias(libs.plugins.reckon)
 }
 
-configure<ReckonExtension> {
-    scopeFromProp()
-    stageFromProp("rc", "final")
+reckon {
+    setDefaultInferredScope("patch")
+    setScopeCalc(calcScopeFromProp())
+    snapshots()
+    stages("beta", "final")
+    setStageCalc(calcStageFromProp())
 }
+
+allprojects {
+    group = "us.ascendtech"
+}
+
 
 defaultTasks("build")
 
@@ -22,14 +29,12 @@ subprojects {
     apply(plugin = "signing")
     apply(plugin = "maven-publish")
 
-    java {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
+    defaultTasks("build")
+    group = "us.ascendtech"
 
-    val sourcesJar = tasks.register<Jar>("sourcesJar") {
-        archiveClassifier.set("sources")
-        from(sourceSets.getByName("main").allSource)
+    configurations.all {
+        // check for updates every build more than 10 minutes apart (for snapshots)
+        resolutionStrategy.cacheChangingModulesFor(10, TimeUnit.MINUTES)
     }
 
     tasks.withType<JavaCompile> {
@@ -39,7 +44,37 @@ subprojects {
         options.compilerArgs.add("-parameters")
     }
 
+    sourceSets {
+        main {
+            java {
+                srcDir("src/main/java")
+            }
+            resources {
+                srcDir("src/main/java")
+            }
+        }
+    }
+
+    idea.module {
+        resourceDirs = resourceDirs - file("src/main/java")
+    }
+
+    val sourcesJar = tasks.register<Jar>("sourcesJar") {
+        dependsOn(JavaPlugin.CLASSES_TASK_NAME)
+        archiveClassifier.set("sources")
+        from(sourceSets.main.get().allJava)
+    }
+
     artifacts.add("archives", sourcesJar)
+
+    tasks.withType<Jar> {
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    }
+
+    java {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
 
     publishing {
         publications {
@@ -89,14 +124,6 @@ subprojects {
         mavenCentral()
     }
 
-    dependencies {
-        implementation("com.google.jsinterop:jsinterop-annotations:2.0.0")
-        testImplementation("org.junit.jupiter:junit-jupiter-api:5.2.0")
-        testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.2.0")
-    }
 
-    tasks.withType<Jar> {
-        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-    }
 
 }

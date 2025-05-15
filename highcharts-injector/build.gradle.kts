@@ -1,4 +1,10 @@
-dependencies {
-    compileOnly("com.google.elemental2:elemental2-dom:1.1.0")
-    compileOnly("com.google.gwt:gwt-user:2.9.0")
+plugins {
+    id("us.ascendtech.gwt.lib")
+}
+
+description = "GWT Highcharts Wrapper"
+
+gwt {
+    includeGwtUser = true
+    libs.add("elemento-core")
 }

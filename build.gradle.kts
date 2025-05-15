@@ -82,7 +82,7 @@ subprojects {
                 from(components["java"])
                 artifact(tasks["sourcesJar"])
                 pom {
-                    url.set("https://ascend-tech.us")
+                    url.set("https://github.com/ascendtech/gwt-highcharts")
                     licenses {
                         license {
                             name.set("The Apache License, Version 2.0")

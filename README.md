@@ -16,8 +16,8 @@ Add AST Maven Repo
 
 Add Dependency:
 ```gradle
-  compile 'us.ascendtech:highcharts:1.2.3'
-  compile 'us.ascendtech:highcharts:1.2.3:sources'
+  compile 'us.ascendtech:highcharts:1.3.3'
+  compile 'us.ascendtech:highcharts:1.3.3:sources'
 ```
 
 ### Gradle Kotlin
